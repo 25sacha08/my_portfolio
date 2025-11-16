@@ -496,7 +496,7 @@
 
 
 
-    <footer class="w-full bg-gray-900 text-gray-300 py-6">
+    <footer class="w-full bg-[rgba(15,23,42,0.9)]  text-gray-300 py-6">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
             <!-- Texte copyright -->
             <p class="text-sm mb-4 md:mb-0">
