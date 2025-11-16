@@ -1,10 +1,12 @@
 <template>
-    <header>
-        <nav class="bg-white border-gray-200 dark:bg-gray-900 border">
-            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <!-- Header-->
+    <header class="fixed top-0 left-0 w-full">
+        <nav class="bg-slate-900 ">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
                 <a href="" class="flex items-center space-x-3 rtl:space-x-reverse">
                     <!-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" /> -->
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">NIKS SACHA</span>
+                    <span class="text-white self-center text-xl font-semibold whitespace-nowrap dark:text-white">NNS •
+                        Data Insights</span>
                 </a>
                 <button data-collapse-toggle="navbar-default" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -18,343 +20,437 @@
                 </button>
                 <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                     <ul
-                        class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                        <li>
+                        class="font-medium flex flex-col md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+
+                        <button
+                            class=" text-gray-300 text-sm rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</button>
+                        <!-- <li>
                             <a href="#"
-                                class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
-                                aria-current="page">Home</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Projects</a>
-                        </li>
-                        <li>
+                                >Projects</a>
+                        </li> -->
+                        <!-- <li>
                             <a href="#"
                                 class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
-                        </li>
+                        </li> -->
                         <!-- <li>
                             <a href="#"
                                 class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
                         </li> -->
-                        <li>
+                        <!-- <li>
                             <a href="#"
                                 class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-                        </li>
+                        </li> -->
+                        <button @click="scrollToSection('projet')"
+                            class="block text-sm text-gray-300  rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Projets</button>
+                        <button @click="scrollToSection('skills')"
+                            class="block text-sm text-gray-300  rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">soft
+                            skills</button>
+                        <!-- <button @click="scrollToSection('skills')" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">soft skilss</button> -->
+                        <div class="px-3 py-2 rounded-2xl bg-cyan-500 shadow-lg shadow-cyan-500/50">
+                            <button 
+                                class="block text-sm text-white  rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</button>
+                        </div>
+
+                        <!-- <button @click="scrollToSection('contact')">Contact</button> -->
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <!-- <template> -->
 
-    <!-- </template> -->
-    <!-- component -->
+    <!-- page d'acceuil -->
     <section>
-        <div class="bg-black text-white py-20">
-            <div class="container mx-auto flex flex-col md:flex-row items-center">
-                <div class="flex flex-col w-full lg:w-1/3 justify-center items-start p-8">
-                    <h1 class="text-3xl md:text-5xl p-2 text-yellow-300 tracking-loose">N'DRI NIKS SACHA</h1>
-                    <h2 class="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">DATA ANALYST
-                    </h2>
-                    <p class="text-sm md:text-base text-gray-50 mb-4">Explore your favourite events and
-                        register now to showcase your talent and win exciting prizes.</p>
-                    <a href="#"
-                        class="bg-transparent hover:bg-yellow-300 text-yellow-300 hover:text-black rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent">
-                        Contact Now</a>
-                </div>
-                <div class="p-8 mt-12 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3  justify-center">
-                    <div class="h-48 flex flex-wrap content-center">
-                        <!-- <div>
-                            <img class="inline-block mt-28 hidden xl:block"
-                                src="C:\Users\HP\Downloads\digital-marketing-1433427_1280.jpg">
-                        </div> -->
-                        <div>
-                            <img class=" inline-block mt-24 md:mt-0 p-8 md:p-0"
-                                src="C:\Users\HP\Documents\data-analytics-illustration-svg-download-png-5891014.png">
+        <div class="text-white p-[6%]">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between my-4 items-center">
+
+                <!-- Colonne de gauche -->
+                <div class="flex flex-col w-full md:w-1/2 justify-center items-start p-8">
+                    <h2 class="text-3xl md:text-5xl py-6 text-white tracking-loose">N'DRI NIKS SACHA</h2>
+                    <!-- <h2 class="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">DATA ANALYST</h2> -->
+                    <p class="text-sm md:text-base text-gray-50 mb-4">
+                        Data Analyste passionné par la transformation de données complexes en narrations actionnables.
+                        J'aide les équipes à prioriser, aligner et piloter leurs décisions grâce à des insights clairs
+                        et des visualisations immersives.
+                    </p>
+                    <div class="flex items-center gap-4">
+
+                        <div class="px-3 py-2 rounded-2xl bg-cyan-500 shadow-lg shadow-cyan-500/50">
+                            <button @click="scrollToSection('contact')"
+                                class="block text-sm text-white rounded-sm md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500">
+                                Contact Now
+                            </button>
                         </div>
-                        <!-- <div>
-                            <img class="inline-block mt-28 hidden lg:block"
-                                src="https://user-images.githubusercontent.com/54521023/116969939-c1d5f180-acd4-11eb-8ad4-9ab9143bdb50.png">
-                        </div> -->
+
+                        <a href="" class="text-sky-700 text-sm md:text-base hover:text-white">
+                            Voir toutes les coordonnées
+                        </a>
+
                     </div>
+
+                </div>
+
+                <!-- Colonne de droite -->
+                <div class="flex justify-center w-full md:w-1/2 ms-4">
+                    <img class="rounded-3xl md:max-w-[95%] p-8 md:p-0"
+                        src="C:\Users\HP\Pictures\Screenshots\portfolio.png">
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <!-- projet recent -->
+    <section id="projet" class="w-full py-12 px-6 text-sky-700">
+        <div class="max-w-4xl mx-auto text-left">
+
+            <h2 class="text-3xl md:text-sm font-bold mb-4">
+                Projets récents
+            </h2>
+
+            <h3 class="text-xl md:text-3xl font-semibold text-white mb-2">
+                Insights data prêts à l'action
+            </h3>
+
+            <p class="text-sm md:text-base text-gray-300 mb-8">
+                Une sélection de réalisations récentes : dashboards, modèles prédictifs et stratégies data-<br>driven
+                pour accélérer les décisions.
+            </p>
+            <!-- les cartes de projet -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+
+                <div
+                    class="bg-white shadow-md border border-gray-200 rounded-lg overflow-hidden dark:bg-gray-800 dark:border-gray-700">
+                    <a href="#" class="block overflow-hidden">
+                        <img class="rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105"
+                            src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                    </a>
+                    <div class="p-5">
+                        <h5 class="text-sky-700 font-bold text-sm mb-2 dark:text-white">Projet 01</h5>
+                        <h5 class="text-gray-900 font-bold text-xl mb-2 dark:text-white">Optimisation KPI e-commerce
+                        </h5>
+                        <p class="text-gray-700 text-sm mb-3 dark:text-gray-400">
+                            Tableaux de bord dynamiques pour suivre le cycle de vie client et le ROI marketing.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white shadow-md border border-gray-200 rounded-lg overflow-hidden dark:bg-gray-800 dark:border-gray-700">
+                    <a href="#" class="block overflow-hidden">
+                        <img class="rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105"
+                            src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                    </a>
+                    <div class="p-5">
+                        <h5 class="text-gray-900 font-bold text-xl mb-2 dark:text-white">Projet Data 2</h5>
+                        <p class="text-gray-700 text-sm mb-3 dark:text-gray-400">
+                            Description rapide du projet et des résultats obtenus.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white shadow-md border border-gray-200 rounded-lg overflow-hidden dark:bg-gray-800 dark:border-gray-700">
+                    <a href="#" class="block overflow-hidden">
+                        <img class="rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105"
+                            src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                    </a>
+                    <div class="p-5">
+                        <h5 class="text-gray-900 font-bold text-xl mb-2 dark:text-white">Projet Data 3</h5>
+                        <p class="text-gray-700 text-sm mb-3 dark:text-gray-400">
+                            Description rapide du projet et des résultats obtenus.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white shadow-md border border-gray-200 rounded-lg overflow-hidden dark:bg-gray-800 dark:border-gray-700">
+                    <a href="#" class="block overflow-hidden">
+                        <img class="rounded-t-lg transition-transform duration-300 ease-in-out hover:scale-105"
+                            src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
+                    </a>
+                    <div class="p-5">
+                        <h5 class="text-gray-900 font-bold text-xl mb-2 dark:text-white">Projet Data 4</h5>
+                        <p class="text-gray-700 text-sm mb-3 dark:text-gray-400">
+                            Description rapide du projet et des résultats obtenus.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bouton voir plus-->
+            <div class="flex justify-center">
+                <button
+                    class="px-6 py-2 bg-sky-700  shadow-cyan-500/50 text-white font-semibold rounded-xl shadow-lg hover:bg-sky-800 transition">
+                    Voir plus
+                </button>
+            </div>
+
+        </div>
+    </section>
+    <!-- soft skills -->
+    <section id="skills" class="w-full py-12 px-6 text-sky-700">
+        <div class="max-w-4xl mx-auto text-left">
+            <h2 class="text-3xl md:text-sm font-bold mb-4">
+                Soft Skills
+            </h2>
+
+            <h3 class="text-xl md:text-3xl font-semibold text-white mb-2">
+                Un partenaire data orienté impact
+            </h3>
+
+            <p class="text-sm md:text-base text-gray-300 mb-8">
+                Collaboration fluide, restitution claire et leadership de conviction pour accompagner les <br> équipes à
+                chaque étape.
+            </p>
+        </div>
+
+        <div class="overflow-x-auto scrollbar-hide py-4 px-2 max-w-[65%] mx-auto">
+            <div class="flex space-x-4">
+
+                <div
+                    class="flex-shrink-0 h-40 w-28 sm:h-44 sm:w-32 md:h-48 md:w-36 bg-gray-100 rounded-xl flex flex-col justify-center items-center shadow duration-300 hover:bg-white hover:shadow-xl transition">
+                    <svg class="h-12 sm:h-14 md:h-16" viewBox="0 0 177 171">
+                        <ellipse cx="107" cy="122" rx="53.6" ry="49.2" fill="#fab529" />
+                        <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="4.2">
+                        </g>
+                    </svg>
+                    <span class="mt-4 text-xs sm:text-sm md:text-base leading-5 font-semibold text-center">
+                        Frozen<br>Seafoods
+                    </span>
+                </div>
+
+                <div
+                    class="flex-shrink-0 h-40 w-28 sm:h-44 sm:w-32 md:h-48 md:w-36 bg-gray-100 rounded-xl flex flex-col justify-center items-center shadow duration-300 hover:bg-white hover:shadow-xl transition">
+                    <svg class="h-12 sm:h-14 md:h-16" viewBox="0 0 177 171">
+                        <ellipse cx="107" cy="122" rx="53.6" ry="49.2" fill="#fab529" />
+                        <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="4.2">
+                        </g>
+                    </svg>
+                    <span class="mt-4 text-xs sm:text-sm md:text-base leading-5 font-semibold text-center">
+                        Frozen<br>Seafoods
+                    </span>
+                </div>
+
+                <div
+                    class="flex-shrink-0 h-40 w-28 sm:h-44 sm:w-32 md:h-48 md:w-36 bg-gray-100 rounded-xl flex flex-col justify-center items-center shadow duration-300 hover:bg-white hover:shadow-xl transition">
+                    <svg class="h-12 sm:h-14 md:h-16" viewBox="0 0 177 171">
+                        <ellipse cx="107" cy="122" rx="53.6" ry="49.2" fill="#fab529" />
+                        <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="4.2">
+                        </g>
+                    </svg>
+                    <span class="mt-4 text-xs sm:text-sm md:text-base leading-5 font-semibold text-center">
+                        Frozen<br>Seafoods
+                    </span>
+                </div>
+
+                <div
+                    class="flex-shrink-0 h-40 w-28 sm:h-44 sm:w-32 md:h-48 md:w-36 bg-gray-100 rounded-xl flex flex-col justify-center items-center shadow duration-300 hover:bg-white hover:shadow-xl transition">
+                    <svg class="h-12 sm:h-14 md:h-16" viewBox="0 0 177 171">
+                        <ellipse cx="107" cy="122" rx="53.6" ry="49.2" fill="#fab529" />
+                        <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="4.2">
+                        </g>
+                    </svg>
+                    <span class="mt-4 text-xs sm:text-sm md:text-base leading-5 font-semibold text-center">
+                        Frozen<br>Seafoods
+                    </span>
+                </div>
+                <div
+                    class="flex-shrink-0 h-40 w-28 sm:h-44 sm:w-32 md:h-48 md:w-36 bg-gray-100 rounded-xl flex flex-col justify-center items-center shadow duration-300 hover:bg-white hover:shadow-xl transition">
+                    <svg class="h-12 sm:h-14 md:h-16" viewBox="0 0 177 171">
+                        <ellipse cx="107" cy="122" rx="53.6" ry="49.2" fill="#fab529" />
+                        <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="4.2">
+                        </g>
+                    </svg>
+                    <span class="mt-4 text-xs sm:text-sm md:text-base leading-5 font-semibold text-center">
+                        Frozen<br>Seafoods
+                    </span>
                 </div>
             </div>
         </div>
     </section>
-        <p class="flex justify-center items-center text-4xl text-bold">SOFTS SKILLS</p>
+    <!-- contact -->
+    <section id="contact" class="w-full py-12 px-6 text-sky-700">
+        <div class="max-w-4xl mx-auto text-left mb-12">
+            <h2 class="text-sm font-bold mb-4 text-white">Contact</h2>
+            <h3 class="text-xl md:text-2xl font-semibold text-white mb-2">
+                Prêts à activer vos données ?
+            </h3>
+            <p class="text-sm md:text-base text-gray-300">
+                Envoyez un message direct et explorons ensemble les pistes pour accélérer vos décisions.
+            </p>
+        </div>
 
-    <div class="p-6 sm:p-12 md:p-16 lg:p-24 flex flex-wrap items-center justify-center gap-6 border shadow-blue-800 shadow-sm">
-        <div
-            class="h-40 w-28 sm:h-44 sm:w-32 md:h-48 md:w-36 bg-gray-100 rounded-xl flex flex-col justify-center items-center shadow duration-300 hover:bg-white hover:shadow-xl transition">
-            <svg class="h-12 sm:h-14 md:h-16" viewBox="0 0 177 171">
-                <ellipse cx="107" cy="122" rx="53.6" ry="49.2" fill="#fab529" />
-                <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="4.2">
-                    <path d="m88.4 83.8c-13.3 19.7-11.3 35.6-3.21 53.6" />
-                    <path d="m14.8 114c6.49 15.1 14.3 28.3 31.3 28.7" />
-                    <path d="m121 165c38.5 8.41 56.2-30.2 54.6-52.5-1.64-22.3-14.4-57.2-55.1-46.4" />
-                    <path d="m120 165c-38.5 8.41-56.2-30.2-54.6-52.5 1.64-22.3 14.4-57.2 55.1-46.4" />
-                    <path d="m115 41.6v-9.2c0-2.47 1.99-4.46 4.46-4.46s4.46 1.99 4.46 4.46v13.4" />
-                    <path d="m151 31.1c-8.19 1.34-15.3-0.291-30.2 19.2v15.7c9.29 3.53 27.7-20.4 30.2-34.9z" />
-                    <path d="m90 29.3c15.6-0.0918 24 9.29 30.7 21v15.7c-11-8.01-23.6-7.92-30.7-36.7z" />
-                    <path d="m24.9 10.4c3.42-3.09 7.43-4.06 11.6-4.53" />
-                    <path
-                        d="m32.3 26.2c-1.82-6.37-8.48-18-14.5-22.9-4.07-0.39-6.34 0.218-7.8 5.05 7.73 7.54 10.5 13.7 14.8 21.7" />
-                    <path d="m82.3 25.6c-15.1 0.422-35.4-4.06-45.8-19.7 25.7-13.6 40.8 7.28 45.8 19.7z" />
-                    <path d="m66.9 16.2c-9.8-7.37-19.9-11.1-30.4-10.4" />
-                    <path
-                        d="m64.6 152c-26.2 20.7-65.7-16.3-63-46.1 1.33-14.5 6.37-22.5 9.58-27.5s1.06-10.1 1.65-10.2c-3.12-17.6-0.924-34.1 18-40" />
-                    <path
-                        d="m64.6 152c33 4.8 48.8-47 31.5-71.4-8.39-11.9-16.8-16.3-22-19-5.24-2.65-5.95-8.19-6.54-8.03-6.11-16.8-17.4-29.7-36.7-25.4" />
-                </g>
-            </svg>
-            <span class="mt-4 text-xs sm:text-sm md:text-base leading-5 font-semibold text-center">
-                Frozen<br>Seafoods
-            </span>
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 md:gap-12 items-start justify-center">
+
+            <!-- Contact Form -->
+            <div class="w-full md:w-1/2 flex-1">
+                <form action="#" class="bg-gray-900 border border-gray-700 rounded-xl p-6 flex flex-col gap-4">
+                    <h3 class="text-2xl font-semibold text-white">Laissez un message</h3>
+                    <span class="text-xs text-white mb-4">
+                        Vos informations restent confidentielles. Le bouton redirige vers WhatsApp avec votre message
+                        prérempli.
+                    </span>
+
+                    <div class="flex flex-col gap-3">
+                        <div class="flex flex-col">
+                            <label for="name" class="text-white mb-1">Name</label>
+                            <input type="text" id="name" placeholder="Your Name"
+                                class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 text-white" />
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="email" class="text-white mb-1">Email</label>
+                            <input type="email" id="email" placeholder="you@example.com"
+                                class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 text-white" />
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="message" class="text-white mb-1">Message</label>
+                            <textarea id="message" rows="4" placeholder="Your message..."
+                                class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 text-white resize-none"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit"
+                        class="mt-4 w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-lg transition">
+                        Send
+                    </button>
+                </form>
+            </div>
+
+            <!-- Social Media -->
+            <div class="w-full md:w-1/2 flex-1">
+                <div class="bg-gray-900 border border-gray-700 rounded-xl p-6 flex flex-col gap-4">
+                    <h3 class="text-2xl font-semibold text-white mb-4">My Social Media</h3>
+                    <div class="flex flex-col gap-3">
+                        <a href="#"
+                            class="flex items-center gap-3 p-3 rounded-lg hover:bg-red-500 hover:text-white transition">
+                            Github
+                        </a>
+                        <a href="#"
+                            class="flex items-center gap-3 p-3 rounded-lg hover:bg-red-500 hover:text-white transition">
+                            Linkedin
+                        </a>
+                        <a href="#"
+                            class="flex items-center gap-3 p-3 rounded-lg hover:bg-red-500 hover:text-white transition">
+                            Youtube
+                        </a>
+                        <a href="#"
+                            class="flex items-center gap-3 p-3 rounded-lg hover:bg-red-500 hover:text-white transition">
+                            Facebook
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div
-            class="h-40 w-28 sm:h-44 sm:w-32 md:h-48 md:w-36 bg-gray-100 rounded-xl flex flex-col justify-center items-center shadow duration-300 hover:bg-white hover:shadow-xl transition">
-            <svg class="h-12 sm:h-14 md:h-16" viewBox="0 0 177 171">
-                <ellipse cx="107" cy="122" rx="53.6" ry="49.2" fill="#fab529" />
-                <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="4.2">
-                    <path d="m88.4 83.8c-13.3 19.7-11.3 35.6-3.21 53.6" />
-                    <path d="m14.8 114c6.49 15.1 14.3 28.3 31.3 28.7" />
-                    <path d="m121 165c38.5 8.41 56.2-30.2 54.6-52.5-1.64-22.3-14.4-57.2-55.1-46.4" />
-                    <path d="m120 165c-38.5 8.41-56.2-30.2-54.6-52.5 1.64-22.3 14.4-57.2 55.1-46.4" />
-                    <path d="m115 41.6v-9.2c0-2.47 1.99-4.46 4.46-4.46s4.46 1.99 4.46 4.46v13.4" />
-                    <path d="m151 31.1c-8.19 1.34-15.3-0.291-30.2 19.2v15.7c9.29 3.53 27.7-20.4 30.2-34.9z" />
-                    <path d="m90 29.3c15.6-0.0918 24 9.29 30.7 21v15.7c-11-8.01-23.6-7.92-30.7-36.7z" />
-                    <path d="m24.9 10.4c3.42-3.09 7.43-4.06 11.6-4.53" />
-                    <path
-                        d="m32.3 26.2c-1.82-6.37-8.48-18-14.5-22.9-4.07-0.39-6.34 0.218-7.8 5.05 7.73 7.54 10.5 13.7 14.8 21.7" />
-                    <path d="m82.3 25.6c-15.1 0.422-35.4-4.06-45.8-19.7 25.7-13.6 40.8 7.28 45.8 19.7z" />
-                    <path d="m66.9 16.2c-9.8-7.37-19.9-11.1-30.4-10.4" />
-                    <path
-                        d="m64.6 152c-26.2 20.7-65.7-16.3-63-46.1 1.33-14.5 6.37-22.5 9.58-27.5s1.06-10.1 1.65-10.2c-3.12-17.6-0.924-34.1 18-40" />
-                    <path
-                        d="m64.6 152c33 4.8 48.8-47 31.5-71.4-8.39-11.9-16.8-16.3-22-19-5.24-2.65-5.95-8.19-6.54-8.03-6.11-16.8-17.4-29.7-36.7-25.4" />
-                </g>
-            </svg>
-            <span class="mt-4 text-xs sm:text-sm md:text-base leading-5 font-semibold text-center">
-                Frozen<br>Seafoods
-            </span>
-        </div>
-        <div
-            class="h-40 w-28 sm:h-44 sm:w-32 md:h-48 md:w-36 bg-gray-100 rounded-xl flex flex-col justify-center items-center shadow duration-300 hover:bg-white hover:shadow-xl transition">
-            <svg class="h-12 sm:h-14 md:h-16" viewBox="0 0 177 171">
-                <ellipse cx="107" cy="122" rx="53.6" ry="49.2" fill="#fab529" />
-                <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="4.2">
-                    <path d="m88.4 83.8c-13.3 19.7-11.3 35.6-3.21 53.6" />
-                    <path d="m14.8 114c6.49 15.1 14.3 28.3 31.3 28.7" />
-                    <path d="m121 165c38.5 8.41 56.2-30.2 54.6-52.5-1.64-22.3-14.4-57.2-55.1-46.4" />
-                    <path d="m120 165c-38.5 8.41-56.2-30.2-54.6-52.5 1.64-22.3 14.4-57.2 55.1-46.4" />
-                    <path d="m115 41.6v-9.2c0-2.47 1.99-4.46 4.46-4.46s4.46 1.99 4.46 4.46v13.4" />
-                    <path d="m151 31.1c-8.19 1.34-15.3-0.291-30.2 19.2v15.7c9.29 3.53 27.7-20.4 30.2-34.9z" />
-                    <path d="m90 29.3c15.6-0.0918 24 9.29 30.7 21v15.7c-11-8.01-23.6-7.92-30.7-36.7z" />
-                    <path d="m24.9 10.4c3.42-3.09 7.43-4.06 11.6-4.53" />
-                    <path
-                        d="m32.3 26.2c-1.82-6.37-8.48-18-14.5-22.9-4.07-0.39-6.34 0.218-7.8 5.05 7.73 7.54 10.5 13.7 14.8 21.7" />
-                    <path d="m82.3 25.6c-15.1 0.422-35.4-4.06-45.8-19.7 25.7-13.6 40.8 7.28 45.8 19.7z" />
-                    <path d="m66.9 16.2c-9.8-7.37-19.9-11.1-30.4-10.4" />
-                    <path
-                        d="m64.6 152c-26.2 20.7-65.7-16.3-63-46.1 1.33-14.5 6.37-22.5 9.58-27.5s1.06-10.1 1.65-10.2c-3.12-17.6-0.924-34.1 18-40" />
-                    <path
-                        d="m64.6 152c33 4.8 48.8-47 31.5-71.4-8.39-11.9-16.8-16.3-22-19-5.24-2.65-5.95-8.19-6.54-8.03-6.11-16.8-17.4-29.7-36.7-25.4" />
-                </g>
-            </svg>
-            <span class="mt-4 text-xs sm:text-sm md:text-base leading-5 font-semibold text-center">
-                Frozen<br>Seafoods
-            </span>
-        </div>
-        <div
-            class="h-40 w-28 sm:h-44 sm:w-32 md:h-48 md:w-36 bg-gray-100 rounded-xl flex flex-col justify-center items-center shadow duration-300 hover:bg-white hover:shadow-xl transition">
-            <svg class="h-12 sm:h-14 md:h-16" viewBox="0 0 177 171">
-                <ellipse cx="107" cy="122" rx="53.6" ry="49.2" fill="#fab529" />
-                <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="4.2">
-                    <path d="m88.4 83.8c-13.3 19.7-11.3 35.6-3.21 53.6" />
-                    <path d="m14.8 114c6.49 15.1 14.3 28.3 31.3 28.7" />
-                    <path d="m121 165c38.5 8.41 56.2-30.2 54.6-52.5-1.64-22.3-14.4-57.2-55.1-46.4" />
-                    <path d="m120 165c-38.5 8.41-56.2-30.2-54.6-52.5 1.64-22.3 14.4-57.2 55.1-46.4" />
-                    <path d="m115 41.6v-9.2c0-2.47 1.99-4.46 4.46-4.46s4.46 1.99 4.46 4.46v13.4" />
-                    <path d="m151 31.1c-8.19 1.34-15.3-0.291-30.2 19.2v15.7c9.29 3.53 27.7-20.4 30.2-34.9z" />
-                    <path d="m90 29.3c15.6-0.0918 24 9.29 30.7 21v15.7c-11-8.01-23.6-7.92-30.7-36.7z" />
-                    <path d="m24.9 10.4c3.42-3.09 7.43-4.06 11.6-4.53" />
-                    <path
-                        d="m32.3 26.2c-1.82-6.37-8.48-18-14.5-22.9-4.07-0.39-6.34 0.218-7.8 5.05 7.73 7.54 10.5 13.7 14.8 21.7" />
-                    <path d="m82.3 25.6c-15.1 0.422-35.4-4.06-45.8-19.7 25.7-13.6 40.8 7.28 45.8 19.7z" />
-                    <path d="m66.9 16.2c-9.8-7.37-19.9-11.1-30.4-10.4" />
-                    <path
-                        d="m64.6 152c-26.2 20.7-65.7-16.3-63-46.1 1.33-14.5 6.37-22.5 9.58-27.5s1.06-10.1 1.65-10.2c-3.12-17.6-0.924-34.1 18-40" />
-                    <path
-                        d="m64.6 152c33 4.8 48.8-47 31.5-71.4-8.39-11.9-16.8-16.3-22-19-5.24-2.65-5.95-8.19-6.54-8.03-6.11-16.8-17.4-29.7-36.7-25.4" />
-                </g>
-            </svg>
-            <span class="mt-4 text-xs sm:text-sm md:text-base leading-5 font-semibold text-center">
-                Frozen<br>Seafoods
-            </span>
-        </div>
-        <div
-            class="h-40 w-28 sm:h-44 sm:w-32 md:h-48 md:w-36 bg-gray-100 rounded-xl flex flex-col justify-center items-center shadow duration-300 hover:bg-white hover:shadow-xl transition">
-            <svg class="h-12 sm:h-14 md:h-16" viewBox="0 0 177 171">
-                <ellipse cx="107" cy="122" rx="53.6" ry="49.2" fill="#fab529" />
-                <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="4.2">
-                    <path d="m88.4 83.8c-13.3 19.7-11.3 35.6-3.21 53.6" />
-                    <path d="m14.8 114c6.49 15.1 14.3 28.3 31.3 28.7" />
-                    <path d="m121 165c38.5 8.41 56.2-30.2 54.6-52.5-1.64-22.3-14.4-57.2-55.1-46.4" />
-                    <path d="m120 165c-38.5 8.41-56.2-30.2-54.6-52.5 1.64-22.3 14.4-57.2 55.1-46.4" />
-                    <path d="m115 41.6v-9.2c0-2.47 1.99-4.46 4.46-4.46s4.46 1.99 4.46 4.46v13.4" />
-                    <path d="m151 31.1c-8.19 1.34-15.3-0.291-30.2 19.2v15.7c9.29 3.53 27.7-20.4 30.2-34.9z" />
-                    <path d="m90 29.3c15.6-0.0918 24 9.29 30.7 21v15.7c-11-8.01-23.6-7.92-30.7-36.7z" />
-                    <path d="m24.9 10.4c3.42-3.09 7.43-4.06 11.6-4.53" />
-                    <path
-                        d="m32.3 26.2c-1.82-6.37-8.48-18-14.5-22.9-4.07-0.39-6.34 0.218-7.8 5.05 7.73 7.54 10.5 13.7 14.8 21.7" />
-                    <path d="m82.3 25.6c-15.1 0.422-35.4-4.06-45.8-19.7 25.7-13.6 40.8 7.28 45.8 19.7z" />
-                    <path d="m66.9 16.2c-9.8-7.37-19.9-11.1-30.4-10.4" />
-                    <path
-                        d="m64.6 152c-26.2 20.7-65.7-16.3-63-46.1 1.33-14.5 6.37-22.5 9.58-27.5s1.06-10.1 1.65-10.2c-3.12-17.6-0.924-34.1 18-40" />
-                    <path
-                        d="m64.6 152c33 4.8 48.8-47 31.5-71.4-8.39-11.9-16.8-16.3-22-19-5.24-2.65-5.95-8.19-6.54-8.03-6.11-16.8-17.4-29.7-36.7-25.4" />
-                </g>
-            </svg>
-            <span class="mt-4 text-xs sm:text-sm md:text-base leading-5 font-semibold text-center">
-                Frozen<br>Seafoods
-            </span>
-        </div>
-        <div
-            class="h-40 w-28 sm:h-44 sm:w-32 md:h-48 md:w-36 bg-gray-100 rounded-xl flex flex-col justify-center items-center shadow duration-300 hover:bg-white hover:shadow-xl transition">
-            <svg class="h-12 sm:h-14 md:h-16" viewBox="0 0 177 171">
-                <ellipse cx="107" cy="122" rx="53.6" ry="49.2" fill="#fab529" />
-                <g fill="none" stroke="#000" stroke-linecap="round" stroke-width="4.2">
-                    <path d="m88.4 83.8c-13.3 19.7-11.3 35.6-3.21 53.6" />
-                    <path d="m14.8 114c6.49 15.1 14.3 28.3 31.3 28.7" />
-                    <path d="m121 165c38.5 8.41 56.2-30.2 54.6-52.5-1.64-22.3-14.4-57.2-55.1-46.4" />
-                    <path d="m120 165c-38.5 8.41-56.2-30.2-54.6-52.5 1.64-22.3 14.4-57.2 55.1-46.4" />
-                    <path d="m115 41.6v-9.2c0-2.47 1.99-4.46 4.46-4.46s4.46 1.99 4.46 4.46v13.4" />
-                    <path d="m151 31.1c-8.19 1.34-15.3-0.291-30.2 19.2v15.7c9.29 3.53 27.7-20.4 30.2-34.9z" />
-                    <path d="m90 29.3c15.6-0.0918 24 9.29 30.7 21v15.7c-11-8.01-23.6-7.92-30.7-36.7z" />
-                    <path d="m24.9 10.4c3.42-3.09 7.43-4.06 11.6-4.53" />
-                    <path
-                        d="m32.3 26.2c-1.82-6.37-8.48-18-14.5-22.9-4.07-0.39-6.34 0.218-7.8 5.05 7.73 7.54 10.5 13.7 14.8 21.7" />
-                    <path d="m82.3 25.6c-15.1 0.422-35.4-4.06-45.8-19.7 25.7-13.6 40.8 7.28 45.8 19.7z" />
-                    <path d="m66.9 16.2c-9.8-7.37-19.9-11.1-30.4-10.4" />
-                    <path
-                        d="m64.6 152c-26.2 20.7-65.7-16.3-63-46.1 1.33-14.5 6.37-22.5 9.58-27.5s1.06-10.1 1.65-10.2c-3.12-17.6-0.924-34.1 18-40" />
-                    <path
-                        d="m64.6 152c33 4.8 48.8-47 31.5-71.4-8.39-11.9-16.8-16.3-22-19-5.24-2.65-5.95-8.19-6.54-8.03-6.11-16.8-17.4-29.7-36.7-25.4" />
-                </g>
-            </svg>
-            <span class="mt-4 text-xs sm:text-sm md:text-base leading-5 font-semibold text-center">
-                Frozen<br>Seafoods
-            </span>
-        </div>
+    </section>
+
+
+    <footer class="w-full bg-gray-900 text-gray-300 py-6">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+    <!-- Texte copyright -->
+    <p class="text-sm mb-4 md:mb-0">
+      © 2025 N'dri Niks Sacha. Tous droits réservés.
+    </p>
+
+    <!-- Liens -->
+    <div class="flex gap-6 text-sm">
+      <a href="#portfolio" class="hover:text-white transition">Portfolio</a>
+      <a href="#contact" class="hover:text-white transition">Contact</a>
     </div>
-        <p class="flex justify-center items-center text-4xl text-bold">PROJECTS</p>
-
-    <div class="p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
-
-        <div class="relative overflow-hidden bg-orange-500 rounded-lg shadow-lg max-w-xs w-full">
-            <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
-                style="transform: scale(1.5); opacity: 0.1;">
-                <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)"
-                    fill="white" />
-                <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white" />
-            </svg>
-            <div class="relative pt-10 px-10 flex items-center justify-center">
-                <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3"
-                    style="background: radial-gradient(black, transparent 60%); transform: rotate3d(0, 0, 1, 20deg) scale3d(1, 0.6, 1); opacity: 0.2;">
-                </div>
-                <img class="relative w-40"
-                    src="https://user-images.githubusercontent.com/2805249/64069899-8bdaa180-cc97-11e9-9b19-1a9e1a254c18.png"
-                    alt="">
-            </div>
-            <div class="relative text-white px-6 pb-6 mt-6">
-                <span class="block opacity-75 -mb-1">Indoor</span>
-                <div class="flex justify-between">
-                    <span class="block font-semibold text-xl">Peace Lily</span>
-                    <span
-                        class="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">$36.00</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 2e carte -->
-        <div class="relative overflow-hidden bg-teal-500 rounded-lg shadow-lg max-w-xs w-full">
-            <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
-                style="transform: scale(1.5); opacity: 0.1;">
-                <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)"
-                    fill="white" />
-                <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white" />
-            </svg>
-            <div class="relative pt-10 px-10 flex items-center justify-center">
-                <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3"
-                    style="background: radial-gradient(black, transparent 60%); transform: rotate3d(0, 0, 1, 20deg) scale3d(1, 0.6, 1); opacity: 0.2;">
-                </div>
-                <img class="relative w-40"
-                    src="https://user-images.githubusercontent.com/2805249/64069998-305de300-cc9a-11e9-8ae7-5a0fe00299f2.png"
-                    alt="">
-            </div>
-            <div class="relative text-white px-6 pb-6 mt-6">
-                <span class="block opacity-75 -mb-1">Outdoor</span>
-                <div class="flex justify-between">
-                    <span class="block font-semibold text-xl">Monstera</span>
-                    <span
-                        class="block bg-white rounded-full text-teal-500 text-xs font-bold px-3 py-2 leading-none flex items-center">$45.00</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3e et 4e cartes (identiques à ton code d’origine) -->
-        <!-- ... -->
-        <div class="relative overflow-hidden bg-teal-500 rounded-lg shadow-lg max-w-xs w-full">
-            <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
-                style="transform: scale(1.5); opacity: 0.1;">
-                <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)"
-                    fill="white" />
-                <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white" />
-            </svg>
-            <div class="relative pt-10 px-10 flex items-center justify-center">
-                <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3"
-                    style="background: radial-gradient(black, transparent 60%); transform: rotate3d(0, 0, 1, 20deg) scale3d(1, 0.6, 1); opacity: 0.2;">
-                </div>
-                <img class="relative w-40"
-                    src="https://user-images.githubusercontent.com/2805249/64069998-305de300-cc9a-11e9-8ae7-5a0fe00299f2.png"
-                    alt="">
-            </div>
-            <div class="relative text-white px-6 pb-6 mt-6">
-                <span class="block opacity-75 -mb-1">Outdoor</span>
-                <div class="flex justify-between">
-                    <span class="block font-semibold text-xl">Monstera</span>
-                    <span
-                        class="block bg-white rounded-full text-teal-500 text-xs font-bold px-3 py-2 leading-none flex items-center">$45.00</span>
-                </div>
-            </div>
-        </div>
-        <div class="relative overflow-hidden bg-teal-500 rounded-lg shadow-lg max-w-xs w-full">
-            <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
-                style="transform: scale(1.5); opacity: 0.1;">
-                <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)"
-                    fill="white" />
-                <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white" />
-            </svg>
-            <div class="relative pt-10 px-10 flex items-center justify-center">
-                <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3"
-                    style="background: radial-gradient(black, transparent 60%); transform: rotate3d(0, 0, 1, 20deg) scale3d(1, 0.6, 1); opacity: 0.2;">
-                </div>
-                <img class="relative w-40"
-                    src="https://user-images.githubusercontent.com/2805249/64069998-305de300-cc9a-11e9-8ae7-5a0fe00299f2.png"
-                    alt="">
-            </div>
-            <div class="relative text-white px-6 pb-6 mt-6">
-                <span class="block opacity-75 -mb-1">Outdoor</span>
-                <div class="flex justify-between">
-                    <span class="block font-semibold text-xl">Monstera</span>
-                    <span
-                        class="block bg-white rounded-full text-teal-500 text-xs font-bold px-3 py-2 leading-none flex items-center">$45.00</span>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
+</footer>
 
 </template>
 <script setup>
+function scrollToSection(sectionId) {
+    const el = document.getElementById(sectionId);
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+    }
+}
 
+import { ref, onMounted, onUnmounted } from "vue";
+
+const autoplayIntervalTime = ref(4000);
+const slides = ref([
+    {
+        imgSrc:
+            "https://penguinui.s3.amazonaws.com/component-assets/carousel/default-slide-1.webp",
+        // imgAlt:
+        //     "Vibrant abstract painting with swirling blue and light pink hues on a canvas.",
+        title: "Front end developers",
+        description:
+            "The architects of the digital world, constantly battling against their mortal enemy – browser compatibility.",
+        classes: "absolute w-full h-full inset-0 object-cover bg-blue-400",
+    },
+    {
+        imgSrc:
+            "https://penguinui.s3.amazonaws.com/component-assets/carousel/default-slide-2.webp",
+        // imgAlt:
+        //     "Vibrant abstract painting with swirling red, yellow, and pink hues on a canvas.",
+        title: "Back end developers",
+        description:
+            "Because not all superheroes wear capes, some wear headphones and stare at terminal screens",
+        classes: "absolute w-full h-full inset-0 object-cover bg-blue-400",
+    },
+    {
+        imgSrc:
+            "https://penguinui.s3.amazonaws.com/component-assets/carousel/default-slide-3.webp",
+        // imgAlt:
+        //     "Vibrant abstract painting with swirling blue and purple hues on a canvas.",
+        title: "Full stack developers",
+        description:
+            "Where “burnout” is just a fancy term for “Tuesday”.",
+        classes: "absolute w-full h-full inset-0 object-cover bg-blue-400",
+
+    },
+]);
+
+const currentSlideIndex = ref(1);
+const isPaused = ref(false);
+let autoplayInterval = null;
+
+// Next slide
+function next() {
+    currentSlideIndex.value =
+        currentSlideIndex.value < slides.value.length
+            ? currentSlideIndex.value + 1
+            : 1;
+}
+
+// Go to slide
+function goTo(index) {
+    currentSlideIndex.value = index;
+    restartAutoplay();
+}
+
+// Pause / Play
+function togglePause() {
+    isPaused.value = !isPaused.value;
+    restartAutoplay();
+}
+
+// Autoplay
+function autoplay() {
+    autoplayInterval = setInterval(() => {
+        if (!isPaused.value) next();
+    }, autoplayIntervalTime.value);
+}
+
+// Restart interval
+function restartAutoplay() {
+    clearInterval(autoplayInterval);
+    autoplay();
+}
+
+onMounted(() => {
+    autoplay();
+});
+
+onUnmounted(() => {
+    clearInterval(autoplayInterval);
+});
 </script>
