@@ -1,48 +1,5 @@
 <template>
-    <!-- Header-->
-    <header class="fixed top-0 left-0 w-full">
-        <nav class="bg-[rgba(15,23,42,0.9)] ">
-            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
-                <a href="" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <!-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" /> -->
-                    <span class="text-white self-center text-xl font-semibold whitespace-nowrap dark:text-white">NNS •
-                        Data Insights</span>
-                </a>
-                <button data-collapse-toggle="navbar-default" type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                    aria-controls="navbar-default" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M1 1h15M1 7h15M1 13h15" />
-                    </svg>
-                </button>
-                <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                    <ul
-                        class="font-medium flex items-center flex-col md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
-
-                        <a href="#"
-                            class=" text-gray-300 text-sm rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
-                        <button @click="scrollToSection('projet')"
-                            class="block text-sm text-gray-300  rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Projets</button>
-                        <button @click="scrollToSection('skills')"
-                            class="block text-sm text-gray-300  rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">soft
-                            skills</button>
-                        <button type="button" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium 
-           rounded-full bg-sky-500/20 text-white hover:bg-sky-500/30 
-           shadow-[0_10px_30px_rgba(56,189,248,0.25)] transition">
-                            Contact
-                        </button>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- page d'acceuil -->
-    <section>
+        <section>
         <!-- <div class="max-w-4xl mx-auto text-left"> -->
         <div class="max-w-4xl mx-auto text-left my-[10%]">
             <div class="container mx-auto flex flex-col md:flex-row justify-between my-4 items-center">
@@ -86,7 +43,7 @@
                 <!-- Colonne de droite -->
                 <div class="flex justify-center w-full md:w-1/2 ms-4">
                     <img class="rounded-3xl md:max-w-[95%] p-8 md:p-0"
-                        src="..\..\assets\portfolio.png">
+                        src="C:\Users\HP\Pictures\Screenshots\portfolio.png">
                 </div>
 
             </div>
@@ -285,9 +242,9 @@
 
             <!-- Contact Form -->
             <div class="w-full md:w-1/2 flex-1 ">
-                <form class="bg-slate-900/60 border border-gray-700 rounded-xl p-6 flex flex-col gap-4" @submit.prevent="redirectToWhatsApp">
+                <form action="#" class="bg-slate-900/60 border border-gray-700 rounded-xl p-6 flex flex-col gap-4" @submit.prevent="redirectToWhatsApp">
                     <h3 class="text-2xl font-semibold text-white">Laissez un message</h3>
-                    <span class="text-xs text-slate-200/70 mb-4">
+                    <span class="text-xs text-white mb-4">
                         Vos informations restent confidentielles. Le bouton redirige vers WhatsApp avec votre message
                         prérempli.
                     </span>
@@ -311,7 +268,7 @@
                                 class="px-4 py-2 bg-slate-900/75 border border-gray-700 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 text-white resize-none"></textarea>
                         </div>
                     </div>
-                    <button type="submit"
+                    <button type="submit" :href="apilink" target="_blank" rel="noopener noreferrer"
                         class="group inline-flex items-center justify-center gap-2 rounded-full bg-[rgba(56,189,248,0.18)] px-6 py-2.5 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(56,189,248,0.25)] transition hover:bg-[rgba(56,189,248,0.3)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[rgba(56,189,248,0.6)] w-full">
                         Envoyer via WhatsApp
                         <span class="-translate-y-[1px] transition group-hover:translate-y-0">
@@ -328,6 +285,27 @@
 
             <!-- Social Media -->
             <div class="w-full md:w-1/2 flex-1">
+                <!-- <div class="bg-[rgba(17,28,68,0.8)] border border-gray-700 rounded-xl p-6 flex flex-col gap-4">
+                    <h3 class="text-2xl font-semibold text-white mb-4">My Social Media</h3>
+                    <div class="flex flex-col gap-3">
+                        <a href="#"
+                            class="flex items-center gap-3 p-3 rounded-lg hover:bg-red-500 hover:text-white transition">
+                            Github
+                        </a>
+                        <a href="#"
+                            class="flex items-center gap-3 p-3 rounded-lg hover:bg-red-500 hover:text-white transition">
+                            Linkedin
+                        </a>
+                        <a href="#"
+                            class="flex items-center gap-3 p-3 rounded-lg hover:bg-red-500 hover:text-white transition">
+                            Youtube
+                        </a>
+                        <a href="#"
+                            class="flex items-center gap-3 p-3 rounded-lg hover:bg-red-500 hover:text-white transition">
+                            Facebook
+                        </a>
+                    </div>
+                </div> -->
                 <div class="rounded-3xl border border-slate-300/15 bg-slate-900/60 p-8">
                     <h3 class="text-lg font-semibold text-white uppercase tracking-[0.3em]">
                         Disponibilité actuelle
@@ -344,9 +322,24 @@
               bg-slate-900/75 px-5 py-4 transition 
               hover:border-sky-400/50 hover:bg-sky-400/10">
 
+                            <!-- <span class="flex h-10 w-10 items-center justify-center rounded-full 
+                   bg-sky-400/20 text-sky-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                </svg>
+                            </span> -->
                             <i class="fa-solid fa-envelopes-bulk text-3xl text-sky-300"></i>
                             <span class="text-sm font-medium text-slate-100/85">Email</span>
+                            <!-- <i class="fa-solid fa-location-arrow"></i> -->
 
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg"
+                                class="ml-auto h-4 w-4 text-sky-300 opacity-0 transition group-hover:opacity-100"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 7h10v10"></path>
+                                <path d="M7 17 17 7"></path>
+                            </svg> -->
                             <i class="fa-solid fa-caret-right ml-auto h-4 w-4 text-sky-300 opacity-0 transition group-hover:opacity-100"></i>
                         </a>
 
@@ -356,9 +349,22 @@
               bg-slate-900/75 px-5 py-4 transition 
               hover:border-sky-400/50 hover:bg-sky-400/10">
                 <i class="fa-solid fa-message text-3xl text-sky-300"></i>
+                            <!-- <span class="flex h-10 w-10 items-center justify-center rounded-full 
+                   bg-sky-400/20 text-sky-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                                </svg>
+                            </span> -->
 
                             <span class="text-sm font-medium text-slate-100/85">WhatsApp</span>
 
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg"
+                                class="ml-auto h-4 w-4 text-sky-300 opacity-0 transition group-hover:opacity-100"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 7h10v10"></path>
+                                <path d="M7 17 17 7"></path>
+                            </svg> -->
                             <i class="fa-solid fa-caret-right ml-auto h-4 w-4 text-sky-300 opacity-0 transition group-hover:opacity-100"></i>
                         </a>
 
@@ -396,19 +402,6 @@
               bg-slate-900/75 px-5 py-4 transition 
               hover:border-sky-400/50 hover:bg-sky-400/10">
 
-                            <!-- <span class="flex h-10 w-10 items-center justify-center rounded-full 
-                   bg-sky-400/20 text-sky-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5
-                   .08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 
-                   0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2
-                   c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9
-                   c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65
-                   -.17.6-.22 1.23-.15 1.85v4"></path>
-                                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
-                                </svg>
-                            </span> -->
                             <i class="fa-brands fa-github text-3xl text-sky-300"></i>
                             <span class="text-sm font-medium text-slate-100/85">GitHub</span>
 
@@ -428,22 +421,6 @@
 
         </div>
     </section>
-    <!-- footer -->
-    <footer class="w-full bg-[rgba(15,23,42,0.9)]  text-gray-300 py-6">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-            <!-- Texte copyright -->
-            <p class="text-sm mb-4 md:mb-0">
-                © 2025 N'dri Niks Sacha. Tous droits réservés.
-            </p>
-
-            <!-- Liens -->
-            <div class="flex gap-6 text-sm">
-                <a href="#portfolio" class="hover:text-white transition">Portfolio</a>
-                <a href="#contact" class="hover:text-white transition">Contact</a>
-            </div>
-        </div>
-    </footer>
-
 </template>
 <script setup>
 function scrollToSection(sectionId) {
@@ -454,6 +431,7 @@ function scrollToSection(sectionId) {
 }
 
 import { ref, onMounted, onUnmounted } from "vue";
+
 const redirectToWhatsApp = () => {
   window.location.href = 'https://wa.me/0500514594'; // Remplacez par le numéro WhatsApp souhaité
 };
